@@ -1,0 +1,47 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&family=Cinzel:wght@400;700&display=swap');
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-display: "Cinzel", serif;
+  
+  --color-gold: #D4AF37;
+  --color-dark-gold: #996515;
+  --color-soft-gold: #fcf4d9;
+  --color-bronze: #804a00;
+  --color-ivory: #fffff0;
+  --color-deep-grey: #1a1a1a;
+}
+
+@layer base {
+  body {
+    @apply bg-[#0a0a0a] text-ivory font-sans antialiased;
+    background-image: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+    min-height: 100vh;
+  }
+}
+
+.luxury-card {
+  @apply bg-deep-grey border border-dark-gold p-8 relative shadow-2xl transition-all duration-300;
+}
+
+.luxury-card:hover {
+  @apply border-gold shadow-[0_0_30px_rgba(212,175,55,0.15)];
+}
+
+.luxury-input {
+  @apply w-full bg-transparent border-b border-dark-gold text-ivory py-2 text-lg outline-none transition-all duration-300 focus:border-gold focus:shadow-[0_1px_0_var(--color-gold)];
+}
+
+.luxury-label {
+  @apply block text-[10px] uppercase tracking-[2px] text-soft-gold mb-2 font-semibold;
+}
+
+.luxury-button {
+  @apply flex-1 py-4 bg-transparent border border-gold text-gold uppercase tracking-[2px] cursor-pointer font-semibold transition-all duration-300 hover:bg-gold hover:text-black hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] active:scale-95;
+}
+
+.luxury-button-reset {
+  @apply border-bronze text-bronze hover:bg-bronze hover:text-ivory;
+}
